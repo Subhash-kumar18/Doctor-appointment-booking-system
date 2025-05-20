@@ -137,7 +137,7 @@ app.post('/login', async (req, res) => {
     const isMatch = await bcrypt.compare(password, patient.password);
     // Simple string comparison (replace with bcrypt for real security)
     if (!isMatch) {
-      req.session.patient = { id:patient.id, email: patient.email, name: patient.name };
+      req.session.patient = { id:patient.id, email: patient.email, name: patient.name, dob: patient.dob, phone: patient.phone, gender: patient.gender };
        return res.render('listings/loginSuccess.ejs', { patient: req.session.patient });
     } else {
       return res.render('listings/loginFail.ejs');
