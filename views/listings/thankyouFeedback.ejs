@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thank You</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #f0f4f8;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 20px;
+    }
+    .thank-you-box {
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 400px;
+      width: 100%;
+    }
+    .thank-you-box h1 {
+      color: #2e86de;
+      margin-bottom: 10px;
+      font-size: 2rem;
+    }
+    .thank-you-box p {
+      color: #555;
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+    .thank-you-box .patient-name {
+      font-weight: bold;
+      color: #2c3e50;
+    }
+    .thank-you-box a {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 24px;
+      text-decoration: none;
+      color: #fff;
+      background: #2e86de;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+      font-size: 1rem;
+    }
+    .thank-you-box a:hover {
+      background: #1b4f72;
+    }
+    @media (max-width: 480px) {
+      .thank-you-box {
+        padding: 30px;
+      }
+      .thank-you-box h1 {
+        font-size: 1.5rem;
+      }
+      .thank-you-box p,
+      .thank-you-box a {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="thank-you-box">
+    <h1>Thank You!</h1>
+    <p>Thank you, <span class="patient-name"><%= patient.name %></span>, for your valuable feedback.</p>
+    <a href="/">Return to Home</a>
+  </div>
+</body>
+</html>

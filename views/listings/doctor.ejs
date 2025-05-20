@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Doctors</title>
+  <link rel="stylesheet" href="/stylesheets/doctor.css">
+</head>
+<body>
+  <% layout("/layouts/boilerplate") %>
+  <h1>Available Doctors</h1>
+  <div class="card-container">
+    <% for(let doctor of allDoctors) { %>
+      <div class="doctor-card">
+        <img src="<%= doctor.image %>" alt="Doctor Image">
+        <h2><%= doctor.name %></h2>
+        <p><strong>Specialization:</strong> <%= doctor.specialization %></p>
+        <p><strong>Experience:</strong> <%= doctor.experience %></p>
+        <p><strong>Fee:</strong> <%= doctor.fee %></p>
+         <a href="/book/<%= doctor._id %>" class="btn">Book Appointment</a>
+      </div>
+    <% } %>
+  </div>
+  <div class="empty"></div>
+</body>
+</html>

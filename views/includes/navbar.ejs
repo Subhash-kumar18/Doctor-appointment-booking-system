@@ -1,0 +1,24 @@
+<!-- views/partials/header.ejs content: -->
+<nav class="navbar">
+  <div class="logo">
+    <div class="logo-image">
+      <img src="/images/logo.jpg" alt="Logo Image">
+    </div>
+      <div class="logo-content">
+        HealthCarePlus.Com
+      </div>
+  </div>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/doctor">Doctors</a></li>
+     <% if (loggedIn) { %>
+        <li><a href="/your-appointments">My Appointments</a></li>
+        <li><a href="/profile">Profile</a></li>
+        
+    <% } else { %>
+          <li><a href="/register">Register</a></li>
+          <li><a href="/login">Login</a></li>
+        </li>
+    <% } %>
+  </ul>
+</nav>

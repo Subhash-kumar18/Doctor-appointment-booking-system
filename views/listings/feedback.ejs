@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Give Feedback</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f7f9fc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    .feedback-container {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      width: 100%;
+    }
+
+    .feedback-container h2 {
+      margin-bottom: 10px;
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    .feedback-container .welcome {
+      text-align: center;
+      color: #555;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      resize: vertical;
+      font-size: 16px;
+      margin-bottom: 20px;
+      min-height: 150px;
+    }
+
+    button {
+      background-color: #2e86de;
+      color: #ffffff;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #1b4f72;
+    }
+
+    @media (max-width: 600px) {
+      .feedback-container {
+        padding: 20px;
+      }
+
+      textarea {
+        font-size: 14px;
+      }
+
+      button {
+        font-size: 14px;
+      }
+      .home-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 16px;
+  text-decoration: none;
+  background-color: #343a40; /* dark gray */
+  color: white;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin: 10px auto;
+  font-weight: 500;
+}
+
+/* Hover effect */
+.home-btn:hover {
+  background-color: #1d2124;
+  transform: translateY(-2px);
+}
+
+/* Responsive for small screens */
+@media (max-width: 600px) {
+  .home-btn {
+    display: block;
+    width: 90%;
+    max-width: 300px;
+    margin: 15px auto;
+    font-size: 18px;
+    text-align: center;
+  }
+}
+
+    }
+  </style>
+</head>
+<body>
+  <div class="feedback-container">
+    <h2>Give Feedback</h2>
+    <p class="welcome">Hello, <strong><%= patient.name %></strong> 👋</p>
+    <form action="/feedback" method="POST">
+      <textarea name="message" placeholder="Write your feedback here..." required></textarea>
+      <button type="submit">Submit Feedback</button>
+      <a href="/" class="home-btn">Home</a>
+    </form>
+  </div>
+</body>
+</html>

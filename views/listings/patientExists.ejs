@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Patient Already Exists</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff3f3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .error-box {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+    }
+
+    .error-box h1 {
+      font-size: 60px;
+      margin: 0;
+      color: #dc3545;
+    }
+
+    .error-box h2 {
+      font-size: 22px;
+      margin: 10px 0;
+      color: #333;
+    }
+
+    .error-box p {
+      font-size: 16px;
+      color: #666;
+    }
+
+    .error-box a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 25px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.3s;
+    }
+
+    .error-box a:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="error-box">
+    <h1>⚠️</h1>
+    <h2>Patient Already Exists</h2>
+    <p>A patient with this email is already registered. Please log in or use a different email.</p>
+    <a href="/login">Go to Login</a> &nbsp;
+    <a href="/register">Try Again</a>
+  </div>
+</body>
+</html>

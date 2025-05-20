@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Appointment</title>
+  <link rel="stylesheet" href="/stylesheets/book.css">
+</head>
+<body>
+  <% layout("/layouts/boilerplate") %>
+  <div class="container">
+    <h1>Book an Appointment with <%= doctor.name %></h1>
+    <form action="/book" method="POST" class="appointment-form">
+      <input type="hidden" name="_id" value="<%= doctor._id %>">
+
+      <label for="patientName"></label>
+      <input type="hidden" name="patientName" id="patientName" value="<%= patient.name %>" required>
+
+      <label for="email"></label>
+      <input type="hidden" name="email" id="email" value="<%= patient.email %>" required>
+
+      <label for="date">Appointment Date:</label>
+      <input type="date" name="date" id="date" required>
+
+      <label for="time">Time:</label>
+      <input type="time" name="time" id="time" required>
+      <button type="submit">Book Appointment</button>
+    </form>
+  </div>
+</body>
+</html>
