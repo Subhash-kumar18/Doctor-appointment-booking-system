@@ -1,24 +1,117 @@
-<!-- views/partials/header.ejs content: -->
-<nav class="navbar">
-  <div class="logo">
-    <div class="logo-image">
-      <img src="/images/logo.jpg" alt="Logo Image">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doctor Booking Navbar</title>
+
+  <style>
+
+/* Navbar container */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #0275d8;
+  padding: 0.7rem 1.5rem;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+/* Logo styles */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+  width: 40px;
+  margin-right: 10px;
+}
+
+.site-name {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #d9edf7;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: #0275d8;
+    flex-direction: column;
+    display: none;
+    padding: 1rem 0;
+  }
+
+  .nav-links a {
+    padding: 0.8rem 1.5rem;
+    text-align: center;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .menu-toggle:checked ~ .nav-links {
+    display: flex;
+  }
+}
+</style>
+
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo-container">
+      <img src="images/logo.jpg" alt="Logo image" class="logo" />
+      <span class="site-name">HealthCarePlus.com</span>
     </div>
-      <div class="logo-content">
-        HealthCarePlus.Com
-      </div>
-  </div>
-  <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="/doctor">Doctors</a></li>
-     <% if (loggedIn) { %>
-        <li><a href="/your-appointments">My Appointments</a></li>
-        <li><a href="/profile">Profile</a></li>
-        
-    <% } else { %>
-          <li><a href="/register">Register</a></li>
-          <li><a href="/login">Login</a></li>
-        </li>
-    <% } %>
-  </ul>
-</nav>
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+    <nav class="nav-links">
+      <a href="/">Home</a>
+      <a href="/doctor">Doctors</a>
+      <% if (loggedIn) { %>
+      <a href="/your-appointments">My Appointments</a>
+      <a href="/profile">Profile</a>
+       <% } else { %>
+      <a href="/register">Register</a>
+      <a href="/login">Login</a>
+      <% } %>
+    </nav>
+  </header>
+</body>
+</html>

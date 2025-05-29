@@ -143,7 +143,6 @@ app.post('/login', async (req, res) => {
       return res.render('listings/loginFail.ejs');
     }
   } catch (err) {
-    console.error(err);
     res.status(500).render('listings/serverError.ejs');
   }
 });
@@ -222,11 +221,10 @@ app.get('/profile', isAuthenticated, async (req, res) => {
 app.post('/logout', isAuthenticated, (req, res) => {
   req.session.destroy(err => {
     if (err) {
-      console.log(err);
-      return res.redirect('/profile');
+      res.status(500).render("listings/serverError.ejs");
     }
     res.clearCookie('connect.sid'); // Clear cookie if using default express-session cookie name
-    res.redirect('/login');
+    res.redirect('/');
   });
 });
 
@@ -239,7 +237,6 @@ app.get('/feedback', isPatientLoggedIn, (req, res) => {
 });
 
 app.post('/feedback', async (req, res) => {
-  console.log(`Checking if user is a patient ${req.session.patient}`)
   if (!req.session.patient) {
     return res.redirect('/login');
   }
@@ -247,7 +244,6 @@ app.post('/feedback', async (req, res) => {
   const { message } = req.body;
 
   try {
-    console.log(req.session.patient)
     await Feedback.create({
       patientId: req.session.patient.id,
       name: req.session.patient.name,
@@ -257,7 +253,6 @@ app.post('/feedback', async (req, res) => {
     res.render('listings/thankyouFeedback.ejs', { patient: req.session.patient });
 
   } catch (error) {
-    console.log(error);
     res.status(500).render("listings/serverError.ejs");
   }
 });

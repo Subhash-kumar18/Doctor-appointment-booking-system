@@ -1,7 +1,7 @@
 {
   "author": {
-  "name": "Om Prakash",
-  "email": "omprakashsiho1@gmail.com"
+    "name": "Om Prakash",
+    "email": "omprakashsiho1@gmail.com"
   },
   "dependencies": {
     "bcrypt": "^6.0.0",
@@ -13,6 +13,6 @@
     "express": "^5.1.0",
     "express-session": "^1.18.1",
     "method-override": "^3.0.0",
-    "mongoose": "^8.14.1"
+    "mongoose": "^8.15.1"
   }
 }

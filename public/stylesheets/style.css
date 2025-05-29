@@ -8,101 +8,9 @@ body {
 }
 
 
-
-
-
-
-/* Navbar styles */
-
-
 .main-content{
   margin-top: 8rem;
 }
-
-.logo{
-  display: flex;
-}
-
-.logo-image img{
-  height: 2rem;
-  width: 2rem;
-}
-
-.logo-content {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-left: 1rem;
-}
-
-/* Navbar styles */
-.main-content{
-  margin-top: 8rem;
-}
-
-.logo{
-  display: flex;
-}
-
-.logo-image img{
-  height: 2rem;
-  width: 2rem;
-}
-
-.logo-content {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-left: 1rem;
-}
-
-.navbar {
-  background-color: #ffffff;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
-  position: sticky;
-  left: 0;
-  top: 0;
-  z-index: 1000;
-}
-.navbar ul { 
-  list-style: none;
-  display: flex;
-  gap: 15px;
-}
-.navbar a { 
-  text-decoration: none;
-  color: #333333;
-  font-size: 1rem;
-  padding: 6px 10px; 
-  border-radius: 4px; 
-  transition: background 0.3s;
-}
-.navbar a:hover {
-   background-color: #e7e7e7; 
-}
-
-/* Responsive for mobile */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  a {
-    flex-direction: column;
-    width: 100%;
-    gap: 10px;
-    margin-top: 10px;
-  }
-
-  ul li a {
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-  }
-}
-
 
 .home-container{
   background-color: #8b237d;
@@ -265,13 +173,30 @@ body {
 }
 
 
-.home-container { max-width: 1000px; margin: 120px auto; background: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-  .home-header { text-align: center; margin-bottom: 20px; }
-  .home-header h1 { color: #337ab7; }
-  .cta { display: inline-block; margin-top: 15px; padding: 10px 20px; background: #337ab7; color: #fff; text-decoration: none; border-radius: 4px; }
-
-
-
+.home-container{
+  max-width: 1000px;
+  margin: 120px auto;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+  .home-header {
+    text-align: center;
+    margin-bottom: 20px; 
+  }
+  .home-header h1 {
+    color: #337ab7; 
+  }
+  .cta {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #337ab7;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+  }
 
 
 /* Footer bar */
