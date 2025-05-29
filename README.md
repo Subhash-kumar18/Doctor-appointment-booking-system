@@ -10,14 +10,17 @@ This is a full-stack *Doctor Appointment Booking System* that allows patients to
 - ✅ Submit Feedback after Consultation
  
  🛠 Technologies Used
+ 
 • Frontend:
 - HTML
 - CSS
 - Tailwind CSS
 - JavaScript
+  
 • Backend:
 - Node.js
 - Express.js
+  
 • Database:
 - MongoDB
  
